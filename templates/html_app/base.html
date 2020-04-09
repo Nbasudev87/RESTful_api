@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>base</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+      <div class="container">
+        <ul class="nav navbar-nav">
+          <li><a class="navbar-brand"href=""> home </a></li>
+          <li><a class="navbar-brand"href="{% url 'admin:index' %}"> ADMIN </a></li>
+          <li><a class="navbar-brand"href=""> OTHER </a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container">
+
+      {% block body_block %}
+         <!anything outside of this will be inherited if you extend------- >
+         <h1>WELCOME TO INDEX</h1>
+         <h2>This page is also inherited from base html page </h2>
+      {% endblock %}
+
+
+
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+{% extends 'html_app/base.html' %}
+{% block body_block %}
+
+    <h1> This is home page </h1>
+    <div>
+        <p> JSON DOCUMENT </p>
+        <div class="container-fluid">
+            {% if customer %}
+          <table>
+            <thead>
+                <th><b>customer name</b></th>
+            </thead>
+            {% for nam in customer %}
+              <tr>
+                <td>{{ nam.name }}</td>
+              </tr>
+            {% endfor %}
+        </table>
+
+      {% else %}
+        <p>No  Records. Table Not Created.</p>
+      {% endif %}
+        </div>
+    </div>
+{% endblock %}

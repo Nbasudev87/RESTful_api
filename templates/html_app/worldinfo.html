@@ -1,0 +1,31 @@
+{% extends 'html_app/base.html' %}
+{% block body_block %}
+     <div>
+        <p> JSON DOCUMENT </p>
+     </div>
+    <div class="container">
+        {% if city %}
+        <table class="table table-dark" border="1"  bordercolor="black">
+            <tr class="thead-dark" color="red">
+                <th scope="col">ID</th>
+                <th scope="col">NAME</th>
+                <th scope="col">COUNTRY CODE</th>
+                <th scope="col">DISTRICT</th>
+                <th scope="col">POPULATION</th>
+            </tr>
+            {% for nam in city %}
+            <tr>
+                <td scope="row">{{ nam.ID }}</td>
+                <td>{{ nam.Name }}</td>
+                <td>{{ nam.CountryCode }}</td>
+                <td>{{ nam.District }}</td>
+                <td>{{ nam.Population }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+            <p>records not found </p>
+        {% endif %}
+    </div>
+
+{% endblock %}

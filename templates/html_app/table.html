@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table border="1" bordercolor="black">
+        <tr>
+            <th>Month</th>
+            <th>Savings</th>
+        </tr>
+        <tr>
+            <td>January</td>
+            <td>$100</td>
+         </tr>
+        <tr>
+            <td>February</td>
+            <td>$80</td>
+        </tr>
+    </table>
+<div class="jumbotron">
+            {% if city %}
+                <table class="table">
+                    <thead>
+                        <th scope="col"><b>ID</b></th>
+                    </thead>
+                    <thead>
+                        <th scope="col"><b>Name</b></th>
+                    </thead>
+                    <thead>
+                        <th scope="col"><b>Country code </b></th>
+                    </thead>
+                    <thead>
+                        <th scope="col"><b>District </b></th>
+                    </thead>
+                    <thead>
+                        <th scope="col"><b>Population</b></th>
+                    </thead>
+                    {% for nam in city %}
+                    <tr>
+                        <td scope="row">{{ nam.ID }}</td>
+                    </tr>
+                    <tr>
+                        <td>{{ nam.CountryCode }}</td>
+                    </tr>
+                    <tr>
+                         <td>{{ nam.District }}</td>
+                    </tr>
+                     <tr>
+                         <td>{{ nam.Population }}</td>
+                     </tr>
+                    {% endfor %}
+                 </table>
+            {% else %}
+                <p>No  Records. Table Not Created.</p>
+            {% endif %}
+        </div>
+    </div>
+
+
+
+
+
+</body>
+</html>
